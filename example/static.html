@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript - The Good, The Bad and The Ugly</title>
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../public/css/core.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            var user, User;
+
+            User = function(options) {
+                this.Class = User;
+
+                console.log(
+                    this.Class.authMap[options.profile]
+                );
+            }
+
+            User.authMap = {
+                'admin': 'oauth',
+                'staff': 'ad',
+                'student': 'ad',
+            }
+
+            user = new User({
+                profile: 'staff'
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="../index.html" class="btn btn-primary">Back</a>
+                </div>
+                <div class="col-sm-12 pane"></div>
+            </div>
+        </div>
+    </body>
+</html>
