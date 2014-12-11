@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript - The Good, The Bad and The Ugly</title>
+        <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../public/css/core.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+        $(function() {
+            $('.container').on('test.event', function(){
+                console.log('caught')
+            });
+
+            console.log('triggering')
+            $('.container').trigger('test.event');
+            console.log('line after trigger');
+
+            console.log('***********************')
+
+            console.log('triggering async')
+            setTimeout(function(){
+                $('.container').trigger('test.event');
+            }, 0);
+            console.log('line after trigger');
+        });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="../index.html" class="btn btn-primary">Back</a>
+                </div>
+                <div class="col-sm-12 pane"></div>
+            </div>
+        </div>
+    </body>
+</html>
