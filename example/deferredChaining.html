@@ -32,6 +32,18 @@
                     console.log('Loading');
 
                     return this.options.model.findOne()
+                        .then(function(response){
+                            var deferred = $.Deferred();
+
+                            console.log('Imma make you wait');
+
+                            setTimeout(function(){
+                                console.log('Done waiting, lets go!');
+                                deferred.resolve(response);
+                            }, 1000);
+
+                            return deferred;
+                        })
                         .done(function(response) {
                             self.options.json = response;
                         })
